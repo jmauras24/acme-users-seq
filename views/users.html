@@ -1,0 +1,14 @@
+{% extends './layout.html' %}
+{% block content %}
+<form action='/users' method='POST'>
+  <div class='form-group'>
+    <label>Username</label>
+    <input class='form-control' name='name' placeholder='Enter name for user'>
+  </div>
+    <button class="btn btn-primary">Create User</button>
+</form>
+  {% for user in users%}
+    <li class="list-group-item">{{user.name}}</li>
+  {% endfor %}
+
+{% endblock %}
