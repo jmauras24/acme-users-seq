@@ -8,7 +8,11 @@
     <button class="btn btn-primary">Create User</button>
 </form>
   {% for user in users%}
-    <li class="list-group-item">{{user.name}}</li>
+    <li class="list-group-item">{{user.name}}
+    <form method='POST' action='/users/{{user.id}}?_method=DELETE'>
+      <button class='btn btn-danger'>Delete</button>
+    </form>
+  </li>
   {% endfor %}
 
 {% endblock %}
