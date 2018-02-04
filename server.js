@@ -16,8 +16,6 @@ const Users = db.models.Users;
 
 const port = process.env.PORT || 3000;
 
-
-
 app.get('/', (req, res, next) => {
   res.render('index')
 });
@@ -29,6 +27,6 @@ app.listen(port,() =>
   console.log(`Listening on port ${port}`)
 );
 
-// db.sync()
-//   .then(() =>
-//     db.seed());
+db.sync()
+  .then(() =>
+    db.seed());
